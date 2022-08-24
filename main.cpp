@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <GLFW/glfw3.h>
-#include <unistd.h>
 
 void error_cb(int err_code, const char* description)
 {
