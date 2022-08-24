@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-#include <GLFW/glfw3.h>
+#include <glfw/glfw3.h>
 
 void error_cb(int err_code, const char* description)
 {
@@ -128,7 +128,7 @@ void draw_field()
 int main(void)
 {
     glfwInit();
-
+    
     /* Create a windowed mode window and its OpenGL context */
     GLFWwindow* window = glfwCreateWindow(AppH, AppW, "Сапёр", NULL, NULL);
     if (!window)
@@ -137,7 +137,6 @@ int main(void)
         return -1;
     }
     glfwMakeContextCurrent(window);
-    
 
     game_init();
     glTranslatef(-1.0f, -1.0f, 0.0f); // Move (0, 0) to bottom-right
