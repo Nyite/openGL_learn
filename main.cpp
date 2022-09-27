@@ -8,6 +8,12 @@ void error_cb(int err_code, const char* description)
     throw(description);
 }
 
+#if defined(WIN32) || defined(_WIN32) || defined(__WIN32__) || defined(__NT__)
+    #define line_thickness 4
+#elif __APPLE__
+    #define line_thickness 7
+#endif
+
 struct Cell
 {
     bool isMine;
@@ -34,7 +40,7 @@ Cell field[FieldH][FieldW] {};
 // 7-segment number renderer
 void draw_cell_number(int num)
 {
-    glLineWidth(7);
+    glLineWidth(line_thickness);
     glBegin(GL_LINES);
 
         glColor3f(0.1f, 0.3f, 0.1f);
